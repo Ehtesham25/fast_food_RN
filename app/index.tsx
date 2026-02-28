@@ -7,7 +7,7 @@ import { images, offers } from "@/constant";
 
 export default function Index() {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 bg-white">
    <FlatList
    data={offers}
    renderItem={({item, index})=>{
@@ -45,6 +45,7 @@ export default function Index() {
     )
    
    }}
+   contentContainerClassName="pb-28 px-5"
    />
     </SafeAreaView>
   );
