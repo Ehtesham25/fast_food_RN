@@ -1,7 +1,8 @@
 import CustomButton from '@/components/CustomButton'
 import CustomInput from '@/components/CustomInput'
+import { Link } from 'expo-router'
 import React from 'react'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 
 const SignIn = () => {
   return (
@@ -25,6 +26,14 @@ const SignIn = () => {
                 title="Sign In"
                 onPress={()=>{}}
             />
+             <View className="flex justify-center mt-5 flex-row gap-2">
+                <Text className="base-regular text-gray-100">
+                    Don't have an account?
+                </Text>
+                <Link href="/sign-up" className="base-bold text-primary">
+                    Sign Up
+                </Link>
+            </View>
     </View>
   )
 }
