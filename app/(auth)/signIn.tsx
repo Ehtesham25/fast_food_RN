@@ -1,10 +1,24 @@
 import CustomButton from '@/components/CustomButton'
 import CustomInput from '@/components/CustomInput'
 import { Link } from 'expo-router'
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 
 const SignIn = () => {
+    const[form, setForm]= useState();
+    const[isSubmitting, setIsubmitting]= useState(false);
+    const onSubmit = ()=>{
+        setIsubmitting(true);
+
+        try {
+            
+        } catch (error) {
+            
+        } finally {
+            setIsubmitting(false);
+        }
+
+    }
   return (
     <View className="gap-10 bg-white rounded-lg p-5 mt-5">
             <CustomInput
@@ -28,9 +42,9 @@ const SignIn = () => {
             />
              <View className="flex justify-center mt-5 flex-row gap-2">
                 <Text className="base-regular text-gray-100">
-                    Don't have an account?
+                    Do not have an account?
                 </Text>
-                <Link href="/sign-up" className="base-bold text-primary">
+                <Link href="/signIn" className="base-bold text-primary">
                     Sign Up
                 </Link>
             </View>
