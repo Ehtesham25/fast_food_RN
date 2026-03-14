@@ -1,19 +1,22 @@
 import CustomButton from '@/components/CustomButton'
 import CustomInput from '@/components/CustomInput'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import React, { useState } from 'react'
-import { Text, View } from 'react-native'
+import { Alert, Text, View } from 'react-native'
 
 const SignIn = () => {
-    const[form, setForm]= useState();
+    const[form, setForm]= useState({email:"", password:""});
     const[isSubmitting, setIsubmitting]= useState(false);
     const onSubmit = ()=>{
+        if(!form.email || !form.password) return Alert.alert('Error', 'Please enter valid email address & password.');
+
         setIsubmitting(true);
 
         try {
+            router.replace("/")
             
-        } catch (error) {
-            
+        } catch (error:any) {
+            Alert.alert('Error', error.message);
         } finally {
             setIsubmitting(false);
         }
@@ -44,7 +47,7 @@ const SignIn = () => {
                 <Text className="base-regular text-gray-100">
                     Do not have an account?
                 </Text>
-                <Link href="/signIn" className="base-bold text-primary">
+                <Link href="/(auth)/signUp" className="base-bold text-primary">
                     Sign Up
                 </Link>
             </View>
