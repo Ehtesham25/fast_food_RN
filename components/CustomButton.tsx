@@ -12,7 +12,7 @@ const CustomButton = ({
     isLoading = false
 }: CustomButtonProps) => {
     return (
-        <TouchableOpacity className={cn('custom-btn mt-20', style)} onPress={onPress} >
+        <TouchableOpacity className={cn('custom-btn mt-10', style)} onPress={onPress} >
             {leftIcon}
 
             <View className="flex-center flex-row">
