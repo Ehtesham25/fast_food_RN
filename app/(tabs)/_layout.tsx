@@ -2,7 +2,7 @@ import { Redirect, Slot } from 'expo-router';
 import React from 'react';
 
 const _layout = () => {
-    let isAuthenticated = false;
+    let isAuthenticated = true;
     if(!isAuthenticated) return <Redirect href= "/signIn" />
   return (<Slot />
   )
