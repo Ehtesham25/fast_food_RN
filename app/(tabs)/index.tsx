@@ -6,7 +6,7 @@ import {
   Pressable,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -17,7 +17,7 @@ export default function Index() {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <FlatList
-      showsVerticalScrollIndicator ={false}
+        showsVerticalScrollIndicator={false}
         data={offers}
         renderItem={({ item, index }) => {
           const isEven = index % 2 === 0;
@@ -80,7 +80,6 @@ export default function Index() {
             <CartButton />
           </View>
         )}
-       
       />
     </SafeAreaView>
   );
